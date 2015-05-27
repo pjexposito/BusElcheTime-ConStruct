@@ -13,6 +13,11 @@
     "resources": {
         "media": [
             {
+                "file": "data/struct.bin",
+                "name": "RECURSO_BUS",
+                "type": "raw"
+            },
+            {
                 "file": "images/pulsar.png",
                 "name": "ICON_PULSAR",
                 "type": "png-trans"
