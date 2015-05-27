@@ -165,23 +165,23 @@ static void menu_draw_row_callback(GContext* ctx, const Layer *cell_layer, MenuI
           //menu_cell_basic_draw(ctx, cell_layer, datos.parada, array_nombre_parada[devuelve_valor(FAV1_PKEY)], NULL);
 
           datos = texto_favoritos_separado(FAV1_PKEY);
-          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_nombre_parada(datos.parada)/*fav1_cadena*/, NULL);
+          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_datos_parada(datos.parada,0)/*fav1_cadena*/, NULL);
           break; 
         case 1:
           datos = texto_favoritos_separado(FAV2_PKEY);
-          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_nombre_parada(datos.parada)/*fav1_cadena*/, NULL);
+          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_datos_parada(datos.parada,0)/*fav1_cadena*/, NULL);
           break;
         case 2:
           datos = texto_favoritos_separado(FAV3_PKEY);
-          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_nombre_parada(datos.parada)/*fav1_cadena*/, NULL);
+          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_datos_parada(datos.parada,0)/*fav1_cadena*/, NULL);
           break;
         case 3:
           datos = texto_favoritos_separado(FAV4_PKEY);
-          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_nombre_parada(datos.parada)/*fav1_cadena*/, NULL);
+          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_datos_parada(datos.parada,0)/*fav1_cadena*/, NULL);
           break;  
         case 4:
           datos = texto_favoritos_separado(FAV5_PKEY);
-          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_nombre_parada(datos.parada)/*fav1_cadena*/, NULL);
+          menu_cell_basic_draw(ctx, cell_layer, datos.texto, devuelve_datos_parada(datos.parada,0)/*fav1_cadena*/, NULL);
           break;
       }
   }

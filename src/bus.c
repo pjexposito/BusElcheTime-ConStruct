@@ -1,8 +1,3 @@
-// POR HACER
-// Meter las funciones de BD en un único archivo. 
-// Quitarle roña al código
-
-
 #include <pebble.h>
 #include "bus.h"
 #include "busdb.h"
@@ -82,7 +77,7 @@ void pinta_nombredeparada()
    //APP_LOG(APP_LOG_LEVEL_DEBUG, "Parada: %d y total es %d.", numero_parada(), total_paradas);
 
   if (numero_parada() < total_paradas) 
-    text_layer_set_text(mensaje_layer, devuelve_nombre_parada(numero_parada()));
+    text_layer_set_text(mensaje_layer, devuelve_datos_parada(numero_parada(),0));
   else
     text_layer_set_text(mensaje_layer, "Parada inexistente");
 
@@ -197,7 +192,7 @@ void manda_js(int tipo,int16_t parada)
   {
     dict_write_int16(iter, KEY_TIPO, 0);    
     dict_write_int16(iter, KEY_PARADA, parada);
-    dict_write_cstring(iter, KEY_L1, devuelve_lineasxparada(parada));
+    dict_write_cstring(iter, KEY_L1, devuelve_datos_parada(parada,1));
   }
   else if (tipo==1)
   {

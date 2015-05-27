@@ -40,7 +40,7 @@ static void window_load(Window *window) {
   scroll_layer_set_click_config_onto_window(s_scroll_layer, window);
   
   GRect bounds = layer_get_frame(window_layer);
-  GRect max_text_bounds = GRect(0, 0, 144, 2000);
+  GRect max_text_bounds = GRect(0, 0, 120, 2000);
   s_label_layer = text_layer_create(max_text_bounds);
   text_layer_set_text(s_label_layer, i_lineas);
   text_layer_set_text_color(s_label_layer, COLOR_TEXTO_CUERPO);  

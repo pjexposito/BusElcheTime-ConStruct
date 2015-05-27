@@ -382,19 +382,19 @@ function ParadaCercana(lat, long)
     for (var x = 0; x < posiciones.length; x++) 
 		{ 
       distancia = distance(lat, long, posiciones[x][0], posiciones[x][1]);
-      console.log("Busco "+lat+", "+long+" frente a "+ posiciones[x][0]+" y "+ posiciones[x][1]);
+      //console.log("Busco "+lat+", "+long+" frente a "+ posiciones[x][0]+" y "+ posiciones[x][1]);
       if (distancia_anterior>distancia) 
           {
           menor = x;
           distancia_anterior = distancia;
           numero_parada = posiciones[x][2];
           }
-        console.log('Para ' + x + ' es  ' + distancia + ". Anterior es :" + distancia_anterior + ". Menor vale: " + menor);
+        //console.log('Para ' + x + ' es  ' + distancia + ". Anterior es :" + distancia_anterior + ". Menor vale: " + menor);
         }
         global_menor = menor;
-        console.log("El menor es la posición: " + menor);
-        console.log("La distancia es: " + distancia);
-        console.log("La parada es: " + numero_parada);
+        //console.log("El menor es la posición: " + menor);
+        //console.log("La distancia es: " + distancia);
+        //console.log("La parada es: " + numero_parada);
     dict = {"KEY_TIPO": 1, "KEY_L1" : numero_parada.toString()};
 	Pebble.sendAppMessage(dict);
     
@@ -448,7 +448,7 @@ function BuscaParadas(parada,linea) {
     if (linea=="2") linea="R2";
     if (linea=="3") linea="R";
     var response = HTTPGET("http://www.auesa.es/paradas_qr/"+parada+".php?vari="+linea);
-    console.log("Respuesta "+ response);
+    //console.log("Respuesta "+ response);
     // CODIGOS DE ERROR
     // 97 = Error 404. La web no existe. Posiblemente por que la parada seleccionada no existe.
     // 98 = Existe la línea y la parada pero no hay datos (posiblemente no circulen autobueses a esas horas.
@@ -500,7 +500,7 @@ function BuscaParadas(parada,linea) {
       }
   if (t1/10 < 1 && t1 > -1) t1 = "0"+t1;
 	if (t2/10 < 1 && t2 > -1) t2 = "0"+t2;
-  console.log("T1 y T2: " + t1 + " " + t2);
+  //console.log("T1 y T2: " + t1 + " " + t2);
 
   return t1+t2;
 }
@@ -524,18 +524,18 @@ Pebble.addEventListener("appmessage",
     //Se refresca la información
     //console.log("Mensaje recibido:" + e.payload.KEY_T1 + " " + e.payload.KEY_T2);
   var tipo = e.payload.KEY_TIPO;
-        console.log("El tipo es "+tipo);
+        //console.log("El tipo es "+tipo);
     
   if (tipo === 0)
   {
     var parada=e.payload.KEY_PARADA;
     var lineas = e.payload.KEY_L1.split('');
-    console.log("Mensaje recibido. Parada: " + parada + ". Lineas: " + lineas);
+    //console.log("Mensaje recibido. Parada: " + parada + ". Lineas: " + lineas);
     ResuelveParada(parada, lineas);
   }
   else if (tipo==1)
   {
-        console.log("Busco cosas");
+        //console.log("Busco cosas");
 
     localiza();
   }
